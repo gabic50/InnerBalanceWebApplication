@@ -1,3 +1,4 @@
+//Create the wellness database
 const nedb = require("nedb");
 class WellnessGoals {
   constructor(dbFilePath) {
@@ -8,6 +9,7 @@ class WellnessGoals {
       this.db = new nedb();
     }
   }
+  //Goals pre set to give users ideas of goals to set
   init() {
     this.db.insert([
       {
@@ -46,7 +48,7 @@ class WellnessGoals {
     ]);
   }
 
-  //a function to return all entries from the database
+  //Function to return all goals from the database
   getAllEntries() {
     //return a Promise object, which can be resolved or rejected
     return new Promise((resolve, reject) => {
@@ -66,6 +68,7 @@ class WellnessGoals {
     });
   }
 
+  //Function to return all completed goals from the database
   getAllCompletedEntries() {
     //return a Promise object, which can be resolved or rejected
     return new Promise((resolve, reject) => {
@@ -85,6 +88,7 @@ class WellnessGoals {
     });
   }
 
+  //Function to return all fitness goals from the database
   getAllFitnessEntries() {
     //return a Promise object, which can be resolved or rejected
     return new Promise((resolve, reject) => {
@@ -104,6 +108,7 @@ class WellnessGoals {
     });
   }
 
+  //Function to return all nutrition goals from the database
   getAllNutritionEntries() {
     //return a Promise object, which can be resolved or rejected
     return new Promise((resolve, reject) => {
@@ -123,6 +128,7 @@ class WellnessGoals {
     });
   }
 
+  //Function to return all lifestyle goals from the database
   getAllLifestyleEntries() {
     //return a Promise object, which can be resolved or rejected
     return new Promise((resolve, reject) => {
@@ -142,6 +148,7 @@ class WellnessGoals {
     });
   }
 
+  //Adds new goals into the database
   addEntry(goalTitle, description, category, startDate, endDate, complete) {
     var entry = {
       goalTitle: goalTitle,
@@ -158,28 +165,6 @@ class WellnessGoals {
         console.log("Error inserting document", goalTitle);
       } else {
         console.log("document inserted into the database", doc);
-      }
-    });
-  }
-
-  //   removeEntry(goalTitle) {
-  //     console.log("goal deleted", entry);
-  //     this.db.remove(goalTitle, function (err, doc) {
-  //       if (err) {
-  //         console.log("Error inserting document", goalTitle);
-  //       } else {
-  //         console.log("document deleted from the database", doc);
-  //       }
-  //     });
-  //   }
-
-  deleteGoal(goalTitle) {
-    db.remove({ goalTitle: goalTitle }, {}, function (err, numRemoved) {
-      if (err) {
-        console.log("Error deleting record:", err);
-      } else if (numRemoved === 0) {
-        console.log("Record not found");
-      } else {
       }
     });
   }

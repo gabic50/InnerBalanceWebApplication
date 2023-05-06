@@ -1,4 +1,4 @@
-//Creates the Database that will store the goals of the user
+//Calls the Database that will store the goals of the user
 const wellnessDAO = require("../models/wellnessModel");
 const db = new wellnessDAO();
 
