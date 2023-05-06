@@ -1,6 +1,9 @@
+//This sets up passport to only let authorized users to gain access to the web application
+//Stores users account locally on the database
 const localStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
 
+//Verifies the users email and password match the authorized user in the database
 function initialize(passport, getUserByEmail, getUserById) {
   const authenticateUser = async (email, password, done) => {
     const user = getUserByEmail(email);
