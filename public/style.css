@@ -1,0 +1,432 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: lightseagreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.header .logo {
+  font-size: 1.7em;
+  color: whitesmoke;
+  margin-left: -50px;
+  text-decoration: none;
+}
+
+.nav a {
+  position: relative;
+  font-size: 1em;
+  color: whitesmoke;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background-color: aquamarine;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: aliceblue;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 100px 0;
+}
+
+.home .content {
+  max-width: 600px;
+  color: lightseagreen;
+}
+
+.logoPic {
+  position: relative;
+  align-items: center;
+  display: flex;
+}
+
+.content h2 {
+  font-size: 3em;
+  letter-spacing: 0.03em;
+}
+
+.content p {
+  margin: 10px 0 40px;
+}
+
+.content a {
+  color: black;
+  text-decoration: none;
+  border: 2px solid lightseagreen;
+  font-weight: 500;
+  padding: 10px 40px;
+  border-radius: 40px;
+  transition: 0.5s;
+}
+
+.content a:hover {
+  background-color: lightseagreen;
+}
+
+.home .wrapper-login {
+  position: relative;
+  width: 440px;
+}
+
+.wrapper-login h2 {
+  font-size: 2em;
+  color: aliceblue;
+  text-align: center;
+}
+
+.wrapper-login .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 40px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 40px;
+  font-size: 1em;
+  color: aliceblue;
+  padding: 0 25px 0 45px;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 45px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: aliceblue;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  font-size: 0.8em;
+  top: -14px;
+  left: 17px;
+}
+
+.wrapper-login .remember-forgot {
+  font-size: 0.9em;
+  color: aliceblue;
+  font-weight: 500;
+  margin: -25px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forgot label input {
+  accent-color: black;
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.wrapper-login .btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  background: linear-gradient(90deg, aqua, whitesmoke);
+  box-shadow: 0 8px 10px black;
+  cursor: pointer;
+  font-size: 1em;
+  color: black;
+  font-weight: 500;
+}
+
+.wrapper-login .register-link {
+  font-size: 0.9em;
+  color: aliceblue;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.register-link p a {
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+.about {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: aliceblue;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 100px 0;
+}
+
+.nutrition {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: rgb(227, 173, 154);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 100px 0;
+}
+
+.lifestyle {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: rgb(202, 168, 231);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 100px 0;
+}
+
+.btn-orange {
+  background-color: orange;
+  outline: coral;
+  color: black;
+}
+
+.btn-orange .hover {
+  background-color: black;
+  color: coral;
+}
+
+.background-pic {
+  z-index: -1;
+  position: fixed;
+}
+
+.fitnessTitle {
+  color: rgb(10, 10, 10);
+  text-align: center;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.fitnessDescription {
+  color: rgb(199, 85, 19);
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.fitnessText {
+  color: rgb(6, 6, 6);
+  text-align: center;
+  font-size: 2em;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.fitnessBackground {
+  background-color: rgb(226, 185, 170);
+}
+
+.btn-green {
+  background-color: greenyellow;
+  outline: lightseagreen;
+  color: black;
+}
+
+.btn-green .hover {
+  background-color: black;
+  color: lightseagreen;
+}
+
+.lifestyleTitle {
+  color: black;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.lifestyleDescription {
+  color: black;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.lifestyleText {
+  color: black;
+  text-align: center;
+  font-size: 2em;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.lifestyleBackground {
+  background-color: rgb(204, 236, 204);
+}
+
+.btn-purple {
+  background-color: rgb(144, 106, 235);
+  outline: rgb(70, 0, 128);
+  color: black;
+}
+
+.btn-purple .hover {
+  background-color: black;
+  color: rgb(156, 87, 235);
+}
+
+.nutritionTitle {
+  color: black;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.nutritionDescription {
+  color: black;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.nutritionText {
+  color: black;
+  text-align: center;
+  font-size: 2em;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.nutritionBackground {
+  background-color: rgb(202, 185, 247);
+}
+
+.btn-gold {
+  background-color: lightyellow;
+  outline: yellow;
+  color: black;
+}
+
+.btn-gold .hover {
+  background-color: black;
+  color: rgb(211, 211, 96);
+}
+
+.achievementsTitle {
+  color: black;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.achievementsDescription {
+  color: black;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.achievementsText {
+  color: black;
+  text-align: center;
+  font-size: 2em;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.achievementsBackground {
+  background-color: lightgoldenrodyellow;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+button[type="submit"] {
+  background-color: lightseagreen;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="email"],
+input[type="password"] {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.btn-logReg {
+  background-color: lightseagreen;
+  outline: whitesmoke;
+  color: black;
+}
+
+.loginBackground {
+  background-color: aliceblue;
+}
+
+.registerTitle {
+  align-items: center;
+  color: black;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 700;
+}

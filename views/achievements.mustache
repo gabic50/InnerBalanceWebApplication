@@ -1,0 +1,27 @@
+<html>
+  <head>
+    {{>header}}
+  </head>
+  <body class="achievementsBackground">
+    <link rel="stylesheet" href="style.css" />
+    <h1 class="achievementsTitle">Achievements Goals</h1>
+    <p class="achievementsDescription">
+      HERE IS ALL YOUR GOALS YOU HAVE ACHIEVED!!!
+    </p>
+    <br />
+    <br />
+    {{#entries}}
+    <div>
+      <h4 class="achievementsText">Goal Name - {{ goalTitle }}</h4>
+      <p class="achievementsDescription">Description: {{ description }}</p>
+    </div>
+
+    <hr />
+    {{/entries}}
+    <br />
+    {{^entries}}
+    <p class="achievementsDescription">No goals achieved yet.</p>
+    <br />
+    {{/entries}}
+  </body>
+</html>

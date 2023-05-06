@@ -1,0 +1,46 @@
+<html>
+  <head>
+    {{>header}}
+  </head>
+  <body class="nutritionBackground">
+    <link rel="stylesheet" href="style.css" />
+    <h1 class="nutritionTitle">Nutrition Goals</h1>
+    <p class="nutritionDescription">
+      Having good nutrition can help provide the necessary steps to help with
+      your health and growth
+    </p>
+    <p class="nutritionDescription">
+      Why not start a create a new nutrition goal to get started
+    </p>
+    <div class="text-center">
+      <a href="/newnutrition" class="btn btn-primary btn-purple"
+        >Set a New nutrition Goal</a
+      >
+    </div>
+    <br />
+    <br />
+    {{#entries}}
+    <div>
+      <h4 class="nutritionText">Goal Name - {{ goalTitle }}</h4>
+      <p class="nutritionDescription">Description: {{ description }}</p>
+      <div>
+        <p class="nutritionDescription">
+          Goal Set on - {{ published }}, Set to Start on - {{ startDate }}, Set
+          to Finish on - {{ endDate }}, Complete - {{ complete }}
+        </p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="" class="btn btn-primary btn-purple">Update</a>
+      <a href="/delete/nutrition" class="btn btn-primary btn-purple">Delete</a>
+    </div>
+
+    <hr />
+    {{/entries}}
+    <br />
+    {{^entries}}
+    No entries yet.
+    <br />
+    {{/entries}}
+  </body>
+</html>

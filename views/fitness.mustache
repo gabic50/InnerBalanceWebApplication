@@ -1,0 +1,46 @@
+<html>
+  <head>
+    {{>header}}
+  </head>
+  <body class="fitnessBackground">
+    <link rel="stylesheet" href="style.css" />
+    <h1 class="fitnessTitle">Fitness Goals</h1>
+    <p class="fitnessDescription">
+      Doing physical fitness regularly will help with your state of mind and
+      overall well-being
+    </p>
+    <p class="fitnessDescription">
+      Why not start a create a new fitness goal to get started
+    </p>
+    <div class="text-center">
+      <a href="/newFitness" class="btn btn-primary btn-orange"
+        >Set a New Fitness Goal</a
+      >
+    </div>
+    <br />
+    <br />
+    {{#entries}}
+    <div>
+      <h4 class="fitnessText">Goal Name - {{ goalTitle }}</h4>
+      <p class="fitnessDescription">Description: {{ description }}</p>
+      <div>
+        <p class="fitnessDescription">
+          Goal Set on - {{ published }}, Set to Start on - {{ startDate }}, Set
+          to Finish on - {{ endDate }}, Complete - {{ complete }}
+        </p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="" class="btn btn-primary btn-orange">Update</a>
+      <a href="/fitness" class="btn btn-primary btn-orange">Delete</a>
+    </div>
+
+    <hr />
+    {{/entries}}
+    <br />
+    {{^entries}}
+    No entries yet.
+    <br />
+    {{/entries}}
+  </body>
+</html>

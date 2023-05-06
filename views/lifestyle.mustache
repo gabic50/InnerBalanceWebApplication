@@ -1,0 +1,45 @@
+<html>
+  <head>
+    {{>header}}
+  </head>
+  <body class="lifestyleBackground">
+    <link rel="stylesheet" href="style.css" />
+    <h1 class="lifestyleTitle">Lifestyle Goals</h1>
+    <p class="lifestyleDescription">
+      Creating good habits can help improve your lifestyle. This will lead to
+      better overall physical and mental well-being
+    </p>
+    <p class="lifestyleDescription">
+      Why not start a create a new lifestyle goal to get started
+    </p>
+    <div class="text-center">
+      <a href="/newlifestyle" class="btn btn-primary btn-green"
+        >Set a New lifestyle Goal</a
+      >
+    </div>
+    <br />
+    <br />
+    {{#entries}}
+    <div>
+      <h4 class="lifestyleText">Goal Name - {{ goalTitle }}</h4>
+      <p class="lifestyleDescription">Description: {{ description }}</p>
+      <div>
+        <p class="lifestyleDescription">
+          Goal Set on - {{ published }}, Set to Start on - {{ startDate }}, Set
+          to Finish on - {{ endDate }}, Complete - {{ complete }}
+        </p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="" class="btn btn-primary btn-green">Update</a>
+      <a href="/nutrition" class="btn btn-primary btn-green">Delete</a>
+    </div>
+    <hr />
+    {{/entries}}
+    <br />
+    {{^entries}}
+    No entries yet.
+    <br />
+    {{/entries}}
+  </body>
+</html>

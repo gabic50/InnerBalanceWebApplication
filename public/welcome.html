@@ -1,0 +1,60 @@
+<!DOCTYPE htm>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewpoint" content="width=device-width" , initial-scale="1.0" />
+    <title>HomePage</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">InnerBalance</a>
+      <nav class="nav">
+        <a href="/fitness">Fitness</a>
+        <a href="/nutrition">Nutrition</a>
+        <a href="/lifestyle">Lifestyle</a>
+        <a href="/achievements">Achievements</a>
+            <a
+      href="#"
+      onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+      >Log Out</a
+    >
+    <form
+      id="logout-form"
+      action="/logout?_method=DELETE"
+      method="POST"
+      style="display: none"
+    >
+      <button type="submit">Log Out</button>
+    </form>
+      </nav>
+    </header>
+     <section class="home">
+      <div class="content">
+        <h2>Welcome</h2>
+        <br>
+        <p>Please select which page you would like to visit</p>
+        <br>
+        <p>Fitness <a class="btn-orange" href="/fitness">Fitness</a></p>
+        <br>
+        <p>Nutrition <a class="btn-green" href="/nutrition">Nutrition</a></p>
+        <br>
+        <p>Lifestyle <a class="btn-purple" href="/lifestyle">Lifestyle</a></p>
+        <br>
+      </div>
+
+      <img class="logoPic" src="InnerBalanceLogo.png"></img>
+
+
+    </section>
+  </body>
+
+  <br>
+  <footer>
+    <!-- Sets up the footer for the website-->
+    <hr />
+    © Copyright Gabriella Cooper S1707047<b>
+  </footer>
+</html>
