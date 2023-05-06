@@ -1,7 +1,9 @@
+//Loads from the .env file
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
+//Load required packages
 const express = require("express");
 const app = express();
 const bcrypt = require("bcrypt");
@@ -12,6 +14,7 @@ const methodOverride = require("method-override");
 const path = require("path");
 const public = path.join(__dirname, "public");
 
+//Load passport
 const initializePassport = require("./passport");
 initializePassport(
   passport,
@@ -19,10 +22,12 @@ initializePassport(
   (id) => users.find((user) => user.id === id)
 );
 
+//Sets up array for users
 const users = [{ name: "admin", email: "admin@admin.com", password: "admin" }];
 
 app.use(express.static(public));
 
+//Sets up bodyParser
 const bodyParser = require("body-parser");
 app.use(
   bodyParser.urlencoded({
@@ -30,6 +35,7 @@ app.use(
   })
 );
 
+//Sets up the mustache files
 const mustache = require("mustache-express");
 app.engine("mustache", mustache());
 app.set("view engine", "mustache");
@@ -42,16 +48,19 @@ app.use(
   })
 );
 
+//Initializes Passport
 app.use(passport.initialize());
 app.use(passport.initialize());
 app.use(methodOverride("_method"));
 
 const router = require("./routes/wellnessRoutes");
 
+//Sets up homepage
 app.get("/homepage.html", (req, res) => {
   res.render("/homepage.html");
 });
 
+//Login Authentication
 app.post(
   "/login",
   checkNotAuthenticated,
@@ -81,6 +90,7 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
   }
 });
 
+//Sets the logout button to go to the home page
 app.delete("/logout", (req, res, next) => {
   req.logOut((err) => {
     if (err) {
@@ -90,6 +100,7 @@ app.delete("/logout", (req, res, next) => {
   });
 });
 
+//Sets only authenticated users can access beyond the login page
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
@@ -98,6 +109,7 @@ function checkAuthenticated(req, res, next) {
   res.redirect("/login");
 }
 
+//Sets authenticated users back to the homepage
 function checkNotAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return res.redirect("homepage.html");
@@ -111,5 +123,5 @@ app.use("/", router);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log("Server started on port ${PORT}. Ctrl+C to stop running.");
+  console.log("Server started on port 3000. Ctrl^C to stop running.");
 });
