@@ -66,7 +66,7 @@ app.post(
   checkNotAuthenticated,
   passport.authenticate("local", {
     successRedirect: "welcome.html",
-    failureRedirect: "/lifestyle",
+    failureRedirect: "/login",
     failureFlash: true,
   })
 );
