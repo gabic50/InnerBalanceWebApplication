@@ -11,13 +11,15 @@ To Run the Application
 
 ### Go to https://localhost:3000 (This will enable you to view the application)
 
-### To view the welcome, fitness, nutrition, lifestyle and achievements pages you MUST register an account
+### To login the email is admin@admin and the password is admin
+
+### If this does not work please look at the steps below:
 
 ### Please go to /Register and input an email (name@name) and a password (password)
 
 ### Once you have registered you will be directed to the /login page
 
-### Login in with your email and password
+### Login in with your email and password you just created
 
 ### You will then be directed to the welcome page
 
